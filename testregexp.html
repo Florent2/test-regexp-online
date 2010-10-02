@@ -8,16 +8,30 @@
     /
     <input type="text" name="regexp" value="" id="regexp">    
     /
+    <p>Exemples :</p>
     <table>    
       <tr>
-        <td><input type="text" name="value_1" value="" id="value_1" class="value"></td>
+        <td><input type="text" name="value_1" value="" id="value_1" class="value example"></td>
         <td>=></td>
         <td><span id="result_1"></span></td>
       </tr>  
       <tr>
-        <td><input type="text" name="value_2" value="" id="value_2" class="value"></td>
+        <td><input type="text" name="value_2" value="" id="value_2" class="value example"></td>
         <td>=></td>
         <td><span id="result_2"></span></td>
+      </tr>      
+    </table>
+    <p>Contre Exemples :</p>
+    <table>    
+      <tr>
+        <td><input type="text" name="value_3" value="" id="value_3" class="value counter_example"></td>
+        <td>=></td>
+        <td><span id="result_3"></span></td>
+      </tr>  
+      <tr>
+        <td><input type="text" name="value_4" value="" id="value_4" class="value counter_example"></td>
+        <td>=></td>
+        <td><span id="result_4"></span></td>
       </tr>      
     </table>
     <script src="jquery.js" type="text/javascript"></script> 
@@ -30,13 +44,21 @@
             value           = $(this).val();
             value_nb        = $(this).attr('id').match(/\d+/)[0];
             span_to_update  = $('#result_' + value_nb);
+            if($(this).hasClass("example")) {
+              ok = ":)";
+              not_ok = ":(";
+            }
+            if($(this).hasClass("counter_example")) {
+              ok = ":(";
+              not_ok = ":)";              
+            }
             if(value == '') {
               span_to_update.html("");
             } else {
               if(regexp.test(value)) {
-                span_to_update.html(":)");
+                span_to_update.html(ok);
               } else {
-                span_to_update.html(":(");
+                span_to_update.html(not_ok);
               }
             }
           });
