@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Test RegExp</title>
+  </head>
+  <body>
+
+    <h1>Test your RegExp!</h1>
+    /
+    <input type="text" name="regexp" value="" id="regexp">    
+    /
+    <table>    
+      <tr>
+        <td><input type="text" name="value_1" value="" id="value_1" class="value"></td>
+        <td>=></td>
+        <td><span id="result_1"></span></td>
+      </tr>  
+      <tr>
+        <td><input type="text" name="value_2" value="" id="value_2" class="value"></td>
+        <td>=></td>
+        <td><span id="result_2"></span></td>
+      </tr>      
+    </table>
+    <script src="jquery.js" type="text/javascript"></script> 
+    <script src="application.js" type="text/javascript"></script>     
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('input').keyup(function() {
+          regexp = new RegExp($('#regexp').val());          
+          $('input.value').each(function(i) {
+            value           = $(this).val();
+            value_nb        = $(this).attr('id').match(/\d+/)[0];
+            span_to_update  = $('#result_' + value_nb);
+            if(value == '') {
+              span_to_update.html("");
+            } else {
+              if(regexp.test(value)) {
+                span_to_update.html(":)");
+              } else {
+                span_to_update.html(":(");
+              }
+            }
+          });
+        });
+      })
+    </script>
+  </body>
+</html>
