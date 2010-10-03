@@ -13,7 +13,7 @@
     <h1>Test your RegExp!</h1>
     <input type="text" name="regexp" value="" id="regexp">
     <div id="examples">
-      <p>Examples :</p>
+      <p>Examples:</p>
       <p>
         <input type="text" value="">
         <span class='result ok'>matched</span>              
@@ -24,9 +24,10 @@
         <span class='result ok'>matched</span>              
         <span class='result not_ok'>not matched</span>
       </p>
+      <a href="#" class="add_example">Add example</a>
     </div>
     <div id="counter_examples">
-      <p>Counter Examples :</p>
+      <p>Counter Examples:</p>
       <p>
         <input type="text" value="">
         <span class='result ok'>matched</span>              
@@ -37,6 +38,7 @@
         <span class='result ok'>matched</span>              
         <span class='result not_ok'>not matched</span>
       </p>
+      <a href="#" class="add_example">Add counter example</a>      
     <div>
 
     <script src="jquery.js" type="text/javascript"></script> 
@@ -45,7 +47,7 @@
       function update_input(input) {
         value = input.val();
         spans = input.parent().children('span');
-        if(value == '') {
+        if(value == '' || $('#regexp').val() == '') {
           spans.hide();
         } else {
           regexp = new RegExp($('#regexp').val());
@@ -61,13 +63,20 @@
       $(document).ready(function() {
         $('#regexp').focus();
         $('span.result').hide();
-        $('input:not(#regexp)').keyup(function() {
+        $('input:not(#regexp)').live("keyup", function() {
           update_input($(this));
         });        
         $('input#regexp').keyup(function() {
           $('input:not(#regexp)').each(function(i) {
             update_input($(this));
           });          
+        });
+        $('a.add_example').click(function() {
+          new_example = $('div#examples p:last').clone();
+          new_example.children('input').attr('value', '');
+          new_example.children('span').hide();
+          new_example.insertBefore($(this));
+          new_example.children("input").focus();
         });
       });
     </script>
