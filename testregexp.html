@@ -20,11 +20,13 @@
         <input type="text" value="" size='50'>
         <span class='result ok'>matched</span>              
         <span class='result not_ok'>not matched</span>
+        <span class='result ok submatches'></span>
       </p>                         
       <p>                          
         <input type="text" value="" size='50'>
         <span class='result ok'>matched</span>              
         <span class='result not_ok'>not matched</span>
+        <span class='result ok submatches'></span>        
       </p>
       <a href="#" class="add_example">Add example</a>
     </div>
@@ -72,12 +74,17 @@
           spans.hide();
         } else {
           regexp = new RegExp($('#regexp').val());
-          if(regexp.test(value)) {
+          result = regexp.exec(value);
+          if(result) {
+            if(result.length > 1) {
+              submatches_span = spans.filter(".submatches");
+              submatches_span.text("$1 = " + result[1]);
+            }            
             spans.filter(".ok").show('fast');
             spans.filter(".not_ok").hide();
           } else {
             spans.filter(".not_ok").show('fast');
-            spans.filter(".ok").hide();                
+            spans.filter(".ok").hide();
           }
         }
       }       
