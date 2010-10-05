@@ -3,6 +3,7 @@
     <title>Test RegExp</title>
     <style type="text/css">
       div#examples span.ok {color: green;}
+      div#examples span.submatches {color: black; font-style:italic;}      
       div#examples span.not_ok {color: red;}      
       div#counter_examples span.ok {color: red;}
       div#counter_examples span.not_ok {color: green;}      
@@ -69,17 +70,18 @@
       });
       function update_input(input) {
         value = input.val();
-        spans = input.parent().children('span');
+        spans = input.parent().children('span');        
         if(value == '' || $('#regexp').val() == '') {
           spans.hide();
         } else {
           regexp = new RegExp($('#regexp').val());
           result = regexp.exec(value);
           if(result) {
-            if(result.length > 1) {
-              submatches_span = spans.filter(".submatches");
-              submatches_span.text("$1 = " + result[1]);
-            }            
+            result.shift();
+            submatches_list_string = jQuery.map(result, function(submatch, index) {
+              return '$' + (index + 1) + ' = ' + submatch;
+            }).join('; ');
+            spans.filter(".submatches").text(submatches_list_string);
             spans.filter(".ok").show('fast');
             spans.filter(".not_ok").hide();
           } else {
