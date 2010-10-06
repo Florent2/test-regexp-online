@@ -3,30 +3,33 @@
     <title>Test RegExp</title>
     <style type="text/css">
       div#examples span.ok {color: green;}
+      div#examples span.ok span.matched{background-color: LawnGreen;}      
       div#examples span.submatches {color: black; font-style:italic;}      
       div#examples span.not_ok {color: red;}      
       div#counter_examples span.ok {color: red;}
+      div#counter_examples span.ok span.matched{background-color: Coral;}      
       div#counter_examples span.not_ok {color: green;}      
       span#regexp_focus_shortcut {font-style: italic;}
     </style>
   </head>
   <body>
-
-    <h1>Test your RegExp!</h1>
+    <h1>Test your Regular Expression online</h1>
+    /
     <input type="text" name="regexp" value="" id="regexp" size='50'>
+    /
     <span id="regexp_focus_shortcut">ctrl-e to focus here</span>
     <div id="examples">
       <h2>Examples:</h2>
       <p>
         <input type="text" value="" size='50'>
-        <span class='result ok'>matched</span>              
-        <span class='result not_ok'>not matched</span>
-        <span class='result ok submatches'></span>
+        <span class='result not_ok'>not matched</span>        
+        <span class='result ok match'></span>              
+        <span class='result ok submatches'></span>        
       </p>                         
       <p>                          
         <input type="text" value="" size='50'>
-        <span class='result ok'>matched</span>              
-        <span class='result not_ok'>not matched</span>
+        <span class='result not_ok'>not matched</span>        
+        <span class='result ok match'></span>
         <span class='result ok submatches'></span>        
       </p>
       <a href="#" class="add_example">Add example</a>
@@ -35,12 +38,12 @@
       <h2>Counter Examples:</h2>
       <p>
         <input type="text" value="" size='50'>
-        <span class='result ok'>matched</span>              
+        <span class='result ok match'>matched</span>              
         <span class='result not_ok'>not matched</span>
       </p>                         
       <p>                          
         <input type="text" value="" size='50'>
-        <span class='result ok'>matched</span>              
+        <span class='result ok match'>matched</span>              
         <span class='result not_ok'>not matched</span>
       </p>
       <a href="#" class="add_example">Add counter example</a>      
@@ -77,12 +80,20 @@
           regexp = new RegExp($('#regexp').val());
           result = regexp.exec(value);
           if(result) {
-            result.shift();
+            matched_string = result.shift();
+            
             submatches_list_string = jQuery.map(result, function(submatch, index) {
               return '$' + (index + 1) + ' = ' + submatch;
             }).join('; ');
+            
+            regexp_to_highlight_matched_string        = new RegExp('(.*)' + matched_string + '(.*)');
+            regexp_to_highlight_matched_string_result = regexp_to_highlight_matched_string.exec(value);
+            before_matched_string                     = regexp_to_highlight_matched_string_result[1];
+            after_matched_string                      = regexp_to_highlight_matched_string_result[2];
+            
             spans.filter(".submatches").text(submatches_list_string);
-            spans.filter(".ok").show('fast');
+            spans.filter(".match").html('matched: ' + before_matched_string + '<span class="matched">' + matched_string + '</span>' + after_matched_string);
+            spans.filter(".ok").show('fast');            
             spans.filter(".not_ok").hide();
           } else {
             spans.filter(".not_ok").show('fast');
