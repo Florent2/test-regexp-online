@@ -17,3 +17,5 @@ TODO:
 * add tests (with http://pivotal.github.com/jasmine/ ?)
 * check if it's working with special characters
 * display alert when regular expression is not valid
+* check HTML validity...
+* use HTML5 tags
