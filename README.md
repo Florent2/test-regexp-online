@@ -15,3 +15,4 @@ TODO:
 * add JavaScript regular expression reference
 * add tests (with http://pivotal.github.com/jasmine/ ?)
 * check if it's working with special characters
+* display alert when regular expression is not valid
