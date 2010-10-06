@@ -4,7 +4,7 @@ Test your Regular Expression online
 A toy project I made to learn a bit more about JavaScript and jQuery.
 
 TODO:
-* check whether better selection can be used
+* check whether better selection rules can be used
 * make sure matched string hightligthing
 * improve design
 * allow /i, /g... options
