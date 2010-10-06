@@ -3,6 +3,8 @@ Test your Regular Expression online
 
 A toy project I made to learn a bit more about JavaScript and jQuery.
 
+[Demo page](http://florent2.github.com/test-regexp-online/)
+
 TODO:
 
 * check whether better selection rules can be used
