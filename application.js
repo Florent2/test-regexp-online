@@ -1,11 +1,11 @@
-function update_input(input) {
-  var value = input.val();
-  var spans = input.parent().children('span');        
-  if(!value || !$('#regexp').val()) {
-    spans.hide();
+function update_result_for(input) {
+  var input_value 	= input.val();
+  var result_spans	= input.parent().children('span');        
+  if(!input_value || !$('#regexp').val()) {
+    result_spans.hide();
   } else {
     var regexp = new RegExp($('#regexp').val());
-    var result = regexp.exec(value);
+    var result = regexp.exec(input_value);
     if(result) {
       var matched_string = result.shift();
       
@@ -14,18 +14,18 @@ function update_input(input) {
       }).join('; ');
       
       var regexp_to_highlight_matched_string          = new RegExp('(.*)' + matched_string + '(.*)');
-      var regexp_to_highlight_matched_string_result   = regexp_to_highlight_matched_string.exec(value);
+      var regexp_to_highlight_matched_string_result   = regexp_to_highlight_matched_string.exec(input_value);
       var before_matched_string                       = regexp_to_highlight_matched_string_result[1];
       var after_matched_string                        = regexp_to_highlight_matched_string_result[2];
-      var value_with_matched_string_highlighted       = 'matched: ' + before_matched_string + '<span class="matched">' + matched_string + '</span>' + after_matched_string;
+      var input_value_with_matched_string_highlighted	= 'matched: ' + before_matched_string + '<span class="matched">' + matched_string + '</span>' + after_matched_string;
       
-      spans.filter(".submatches").text(submatches_list_string);
-      spans.filter(".match").html(value_with_matched_string_highlighted);
-      spans.filter(".ok").show('fast');            
-      spans.filter(".not_ok").hide();
+      result_spans.filter(".submatches").text(submatches_list_string);
+      result_spans.filter(".match").html(input_value_with_matched_string_highlighted);
+      result_spans.filter(".ok").show('fast');            
+      result_spans.filter(".not_ok").hide();
     } else {
-      spans.filter(".not_ok").show('fast');
-      spans.filter(".ok").hide();
+      result_spans.filter(".not_ok").show('fast');
+      result_spans.filter(".ok").hide();
     }
   }
 }       
@@ -46,11 +46,11 @@ $(document).ready(function() {
   $('#regexp').focus();
   $('span.result').hide();
   $('input:not(#regexp)').live("keyup", function() {
-    update_input($(this));
+    update_result_for($(this));
   });        
   $('input#regexp').keyup(function() {
     $('input:not(#regexp)').each(function(i) {
-      update_input($(this));
+      update_result_for($(this));
     });          
   });
   $('a.add_example').click(function() {
