@@ -1,10 +1,10 @@
-function update_result_for(input) {
+function update_result_for(input, regexp_value) {
   var input_value 	= input.val();
   var result_spans	= input.parent().children('span');        
   if(!input_value || !$('#regexp').val()) {
     result_spans.hide();
   } else {
-    var regexp = new RegExp($('#regexp').val());
+    var regexp = new RegExp(regexp_value);
     var result = regexp.exec(input_value);
     if(result) {
       var matched_string = result.shift();
@@ -46,11 +46,11 @@ $(document).ready(function() {
   $('#regexp').focus();
   $('span.result').hide();
   $('input:not(#regexp)').live("keyup", function() {
-    update_result_for($(this));
+    update_result_for($(this), $('#regexp').val());
   });        
   $('input#regexp').keyup(function() {
     $('input:not(#regexp)').each(function(i) {
-      update_result_for($(this));
+      update_result_for($(this), $('#regexp').val());
     });          
   });
   $('a.add_example').click(function() {
