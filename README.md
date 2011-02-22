@@ -13,7 +13,6 @@ TODO:
 * allow /i, /g... options
 * allow example or counter example deletion
 * fix spans showing: initially they are displayed below the input field
-* update_input should take the regexp value as a parameter
 * check other online regular expression testers to see if other features can be useful
 * add JavaScript regular expression reference
 * add tests (with http://pivotal.github.com/jasmine/ ?)
