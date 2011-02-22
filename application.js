@@ -1,7 +1,7 @@
 function update_input(input) {
   var value = input.val();
   var spans = input.parent().children('span');        
-  if(value == '' || $('#regexp').val() == '') {
+  if(!value || !$('#regexp').val()) {
     spans.hide();
   } else {
     var regexp = new RegExp($('#regexp').val());
@@ -33,10 +33,10 @@ function update_input(input) {
 // from http://www.scottklarr.com/topic/126/how-to-create-ctrl-key-shortcuts-in-javascript/
 var isCtrl = false;
 $(document).keyup(function (e) {
-	if(e.which == 17) isCtrl=false;
+	if(e.which === 17) isCtrl=false;
 }).keydown(function (e) {
-	if(e.which == 17) isCtrl=true;
-	if(e.which == 69 && isCtrl == true) {
+	if(e.which === 17) isCtrl=true;
+	if(e.which === 69 && isCtrl) {
     $('#regexp').focus();          
 		return false;
 	}
