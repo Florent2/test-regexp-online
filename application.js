@@ -1,23 +1,23 @@
 function update_input(input) {
-  value = input.val();
-  spans = input.parent().children('span');        
+  var value = input.val();
+  var spans = input.parent().children('span');        
   if(value == '' || $('#regexp').val() == '') {
     spans.hide();
   } else {
-    regexp = new RegExp($('#regexp').val());
-    result = regexp.exec(value);
+    var regexp = new RegExp($('#regexp').val());
+    var result = regexp.exec(value);
     if(result) {
-      matched_string = result.shift();
+      var matched_string = result.shift();
       
-      submatches_list_string = jQuery.map(result, function(submatch, index) {
+      var submatches_list_string = jQuery.map(result, function(submatch, index) {
         return '$' + (index + 1) + ' = ' + submatch;
       }).join('; ');
       
-      regexp_to_highlight_matched_string          = new RegExp('(.*)' + matched_string + '(.*)');
-      regexp_to_highlight_matched_string_result   = regexp_to_highlight_matched_string.exec(value);
-      before_matched_string                       = regexp_to_highlight_matched_string_result[1];
-      after_matched_string                        = regexp_to_highlight_matched_string_result[2];
-      value_with_matched_string_highlighted       = 'matched: ' + before_matched_string + '<span class="matched">' + matched_string + '</span>' + after_matched_string;
+      var regexp_to_highlight_matched_string          = new RegExp('(.*)' + matched_string + '(.*)');
+      var regexp_to_highlight_matched_string_result   = regexp_to_highlight_matched_string.exec(value);
+      var before_matched_string                       = regexp_to_highlight_matched_string_result[1];
+      var after_matched_string                        = regexp_to_highlight_matched_string_result[2];
+      var value_with_matched_string_highlighted       = 'matched: ' + before_matched_string + '<span class="matched">' + matched_string + '</span>' + after_matched_string;
       
       spans.filter(".submatches").text(submatches_list_string);
       spans.filter(".match").html(value_with_matched_string_highlighted);
@@ -29,6 +29,7 @@ function update_input(input) {
     }
   }
 }       
+
 // from http://www.scottklarr.com/topic/126/how-to-create-ctrl-key-shortcuts-in-javascript/
 var isCtrl = false;
 $(document).keyup(function (e) {
