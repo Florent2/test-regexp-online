@@ -59,7 +59,7 @@ $(document).ready(function() {
     });          
   });
   $('a.add_example').click(function() {
-    newExample = $('div#examples p:last').clone();
+    var newExample = $('div#examples p:last').clone();
     newExample.children('input').attr('value', '');
     newExample.children('span').hide();
     newExample.insertBefore($(this));
