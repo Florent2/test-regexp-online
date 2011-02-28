@@ -6,30 +6,30 @@ function updateResultFor(input, regexpValue) {
   var resultSpans	= input.parent().children('span');        
   if(!inputValue || !regexpValue) {
     resultSpans.hide();
+		return;
+  }
+  var regexp = new RegExp(regexpValue);
+  var result = regexp.exec(inputValue);
+  if(result) {
+    var matchedString = result.shift();
+    
+    var submatchesListString = jQuery.map(result, function(submatch, index) {
+      return '$' + (index + 1) + ' = ' + submatch;
+    }).join('; ');
+    
+    var regexpToHighlightMatchedString          = new RegExp('(.*)' + matchedString + '(.*)');
+    var regexpToHighlightMatchedStringResult   	= regexpToHighlightMatchedString.exec(inputValue);
+    var beforeMatchedString                     = regexpToHighlightMatchedStringResult[1];
+    var afterMatchedString                      = regexpToHighlightMatchedStringResult[2];
+    var inputValueWithMatchedStringHighlighted	= 'matched: ' + beforeMatchedString + '<span class="matched">' + matchedString + '</span>' + afterMatchedString;
+    
+    resultSpans.filter(".submatches").text(submatchesListString);
+    resultSpans.filter(".match").html(inputValueWithMatchedStringHighlighted);
+    resultSpans.filter(".ok").show('fast');            
+    resultSpans.filter(".not_ok").hide();
   } else {
-    var regexp = new RegExp(regexpValue);
-    var result = regexp.exec(inputValue);
-    if(result) {
-      var matchedString = result.shift();
-      
-      var submatchesListString = jQuery.map(result, function(submatch, index) {
-        return '$' + (index + 1) + ' = ' + submatch;
-      }).join('; ');
-      
-      var regexpToHighlightMatchedString          = new RegExp('(.*)' + matchedString + '(.*)');
-      var regexpToHighlightMatchedStringResult   	= regexpToHighlightMatchedString.exec(inputValue);
-      var beforeMatchedString                     = regexpToHighlightMatchedStringResult[1];
-      var afterMatchedString                      = regexpToHighlightMatchedStringResult[2];
-      var inputValueWithMatchedStringHighlighted	= 'matched: ' + beforeMatchedString + '<span class="matched">' + matchedString + '</span>' + afterMatchedString;
-      
-      resultSpans.filter(".submatches").text(submatchesListString);
-      resultSpans.filter(".match").html(inputValueWithMatchedStringHighlighted);
-      resultSpans.filter(".ok").show('fast');            
-      resultSpans.filter(".not_ok").hide();
-    } else {
-      resultSpans.filter(".not_ok").show('fast');
-      resultSpans.filter(".ok").hide();
-    }
+    resultSpans.filter(".not_ok").show('fast');
+    resultSpans.filter(".ok").hide();
   }
 }       
 
