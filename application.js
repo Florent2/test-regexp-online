@@ -1,4 +1,5 @@
-// updates the spans attached to the passed input field to display whether the passed input field content matches the passed regexp value or not
+// updates the spans attached to the passed input field to display whether 
+	// the passed input field content matches the passed regexp value or not
 // input: the text input field
 // regexpValue: the value of the regexp (String)
 function updateResultFor(input, regexpValue) {
