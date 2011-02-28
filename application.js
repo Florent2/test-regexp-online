@@ -1,10 +1,10 @@
-// updates the spans attached to the passed input field to display whether the passed input field content matches the passed regexp or not
+// updates the spans attached to the passed input field to display whether the passed input field content matches the passed regexp value or not
 // input: the text input field
 // regexp_value: the value of the regexp (String)
 function update_result_for(input, regexp_value) {
   var input_value 	= input.val();
   var result_spans	= input.parent().children('span');        
-  if(!input_value || !$('#regexp').val()) {
+  if(!input_value || !regexp_value) {
     result_spans.hide();
   } else {
     var regexp = new RegExp(regexp_value);
