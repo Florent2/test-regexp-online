@@ -23,11 +23,19 @@ function updateResultFor(input, regexpValue) {
     return '$' + (index + 1) + ' = ' + submatch;
   }).join('; ');
   
-  var regexpToHighlightMatchedString          = new RegExp('(.*)' + matchedString + '(.*)');
-  var regexpToHighlightMatchedStringResult   	= regexpToHighlightMatchedString.exec(inputValue);
-  var beforeMatchedString                     = regexpToHighlightMatchedStringResult[1];
-  var afterMatchedString                      = regexpToHighlightMatchedStringResult[2];
-  var inputValueWithMatchedStringHighlighted	= 'matched: ' + beforeMatchedString + '<span class="matched">' + matchedString + '</span>' + afterMatchedString;
+  var regexpToHighlightMatchedString          = 
+		new RegExp('(.*)' + matchedString + '(.*)');
+  var regexpToHighlightMatchedStringResult   	= 
+		regexpToHighlightMatchedString.exec(inputValue);
+  var beforeMatchedString                     = 
+		regexpToHighlightMatchedStringResult[1];
+  var afterMatchedString                      = 
+		regexpToHighlightMatchedStringResult[2];
+  var inputValueWithMatchedStringHighlighted	= 
+		'matched: ' + 
+		beforeMatchedString + 
+		'<span class="matched">' + matchedString + '</span>' + 
+		afterMatchedString;
   
   resultSpans.filter(".submatches").text(submatchesListString);
   resultSpans.filter(".match").html(inputValueWithMatchedStringHighlighted);
