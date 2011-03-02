@@ -10,7 +10,6 @@ TODO:
 * check whether better selection rules can be used
 * make sure matched string hightligthing
 * improve design
-* allow /i, /g... options
 * allow example or counter example deletion
 * fix spans showing: initially they are displayed below the input field
 * check other online regular expression testers to see if other features can be useful
