@@ -9,7 +9,7 @@
       div#counterexamples span.ok {color: red;}
       div#counterexamples span.ok span.matched{background-color: Coral;}      
       div#counterexamples span.not_ok {color: green;}      
-      span#regexp_focus_shortcut {font-style: italic;}
+      p#regexp_focus_shortcut {font-style: italic; margin-top: 0px; margin-left: 10px;}
     </style>
     <script type="text/javascript">
 
@@ -30,17 +30,20 @@
     /
     <input type="text" name="regexp" value="" id="regexp" size='50'>
     /
-    <span id="regexp_focus_shortcut">ctrl-e to focus here</span>
+    <input type="checkbox" id="i_flag" class="flag">i
+    <input type="checkbox" id="g_flag" class="flag">g    
+    <input type="checkbox" id="m_flag" class="flag">m    
+    <p id="regexp_focus_shortcut">ctrl-e to focus here</p>
     <div id="examples">
       <h2>Examples:</h2>
       <p>
-        <input type="text" value="" size='50'>
+        <input type="text" value="" size='50' class="example">
         <span class='result not_ok'>not matched</span>        
         <span class='result ok match'></span>              
         <span class='result ok submatches'></span>        
       </p>                         
       <p>                          
-        <input type="text" value="" size='50'>
+        <input type="text" value="" size='50' class="example">
         <span class='result not_ok'>not matched</span>        
         <span class='result ok match'></span>
         <span class='result ok submatches'></span>        
@@ -50,12 +53,12 @@
     <div id="counterexamples">
       <h2>Counterexamples:</h2>
       <p>
-        <input type="text" value="" size='50'>
+        <input type="text" value="" size='50' class="counterexample">
         <span class='result ok match'>matched</span>              
         <span class='result not_ok'>not matched</span>
       </p>                         
       <p>                          
-        <input type="text" value="" size='50'>
+        <input type="text" value="" size='50' class="counterexample">
         <span class='result ok match'>matched</span>              
         <span class='result not_ok'>not matched</span>
       </p>
