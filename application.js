@@ -12,7 +12,14 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 		return;
   }
   
-	var regexp = new RegExp(regexpValue, regexpFlags);
+	try {
+		var regexp = new RegExp(regexpValue, regexpFlags);
+	}
+	catch(e) {
+		$('p#invalid_regexp').show();
+		return;
+	}
+	$('p#invalid_regexp').hide();	
   var result = regexp.exec(inputValue);
   if(!result) {
 	  resultSpans.filter(".not_ok").show('fast');
@@ -71,6 +78,7 @@ $(document).keyup(function (e) {
 $(document).ready(function() {
   $('#regexp').focus();
   $('span.result').hide();
+  $('p#invalid_regexp').hide();
   $('input.example, input.counterexample').live("keyup", function() {
     updateResultFor($(this), $('#regexp').val(), getRegexFlags());
   });        

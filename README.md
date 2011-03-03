@@ -7,8 +7,6 @@ A toy project I made to learn a bit more about JavaScript and jQuery.
 
 TODO:
 
-* display alert when regular expression is not valid
-
 * add JavaScript regular expression reference
 * improve design
 * check HTML validity...
