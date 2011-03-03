@@ -25,6 +25,7 @@ function updateResultFor(input, regexpValue, regexpFlags) {
   var submatchesListString = jQuery.map(result, function(submatch, index) {
     return '$' + (index + 1) + ' = ' + submatch;
   }).join('; ');
+  resultSpans.filter(".submatches").text(submatchesListString);
   
   var regexpToHighlightMatchedString          = 
 		new RegExp('(.*)' + matchedString + '(.*)');
@@ -38,11 +39,10 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 		'matched: ' + 
 		beforeMatchedString + 
 		'<span class="matched">' + matchedString + '</span>' + 
-		afterMatchedString;
-  
-  resultSpans.filter(".submatches").text(submatchesListString);
+		afterMatchedString;  
   resultSpans.filter(".match").html(inputValueWithMatchedStringHighlighted);
-  resultSpans.filter(".ok").show('fast');            
+  
+	resultSpans.filter(".ok").show('fast');            
   resultSpans.filter(".not_ok").hide();
 }       
 
