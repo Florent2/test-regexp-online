@@ -20,13 +20,7 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 		return;
 	} 
   
-	var matchedString = result.shift();
-
-  var submatchesListString = jQuery.map(result, function(submatch, index) {
-    return '$' + (index + 1) + ' = ' + submatch;
-  }).join('; ');
-  resultSpans.filter(".submatches").text(submatchesListString);
-  
+	var matchedString 			= result.shift();
   var	matchedIndex				= result.index;
 	var beforeMatchedString = inputValue.slice(0, matchedIndex);
 	var afterMatchedString 	= inputValue.slice(matchedIndex + matchedString.length);
@@ -37,6 +31,11 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 		afterMatchedString;  
   resultSpans.filter(".match").html(inputValueWithMatchedStringHighlighted);
   
+  var submatchesListString = jQuery.map(result, function(submatch, index) {
+    return '$' + (index + 1) + ' = ' + submatch;
+  }).join('; ');
+  resultSpans.filter(".submatches").text(submatchesListString);
+  
 	resultSpans.filter(".ok").show('fast');            
   resultSpans.filter(".not_ok").hide();
 }       
@@ -45,7 +44,7 @@ function getRegexFlags() {
 	var result = "";
 	if($('input#i_flag').is(':checked')) result += "i";
 	// if($('input#g_flag').is(':checked')) result += "g";
-	if($('input#m_flag').is(':checked')) result += "m";
+	// if($('input#m_flag').is(':checked')) result += "m";
 	return result;
 }
 

@@ -16,9 +16,9 @@ TODO:
 * check other online regular expression testers to see if other features can be useful
 
 * add tests (with http://pivotal.github.com/jasmine/ ?)
-* check if it's working with special characters / allow to input special characters like \n
 
 * more work needed to support the g flag to correctly highlight all matched strings
+* to support the m flag I would need the user to be able to enter characters like \n
 
 * allow example or counter example deletion
 * fix spans showing: initially they are displayed below the input field
