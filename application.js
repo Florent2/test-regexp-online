@@ -21,28 +21,23 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 	} 
   
 	var matchedString = result.shift();
-  
+
   var submatchesListString = jQuery.map(result, function(submatch, index) {
     return '$' + (index + 1) + ' = ' + submatch;
   }).join('; ');
+  resultSpans.filter(".submatches").text(submatchesListString);
   
-  var regexpToHighlightMatchedString          = 
-		new RegExp('(.*)' + matchedString + '(.*)');
-  var regexpToHighlightMatchedStringResult   	= 
-		regexpToHighlightMatchedString.exec(inputValue);
-  var beforeMatchedString                     = 
-		regexpToHighlightMatchedStringResult[1];
-  var afterMatchedString                      = 
-		regexpToHighlightMatchedStringResult[2];
+  var	matchedIndex				= result.index;
+	var beforeMatchedString = inputValue.slice(0, matchedIndex);
+	var afterMatchedString 	= inputValue.slice(matchedIndex + matchedString.length);
   var inputValueWithMatchedStringHighlighted	= 
 		'matched: ' + 
 		beforeMatchedString + 
 		'<span class="matched">' + matchedString + '</span>' + 
-		afterMatchedString;
-  
-  resultSpans.filter(".submatches").text(submatchesListString);
+		afterMatchedString;  
   resultSpans.filter(".match").html(inputValueWithMatchedStringHighlighted);
-  resultSpans.filter(".ok").show('fast');            
+  
+	resultSpans.filter(".ok").show('fast');            
   resultSpans.filter(".not_ok").hide();
 }       
 
