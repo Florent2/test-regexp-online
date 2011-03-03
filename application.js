@@ -44,7 +44,7 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 function getRegexFlags() {
 	var result = "";
 	if($('input#i_flag').is(':checked')) result += "i";
-	if($('input#g_flag').is(':checked')) result += "g";
+	// if($('input#g_flag').is(':checked')) result += "g";
 	if($('input#m_flag').is(':checked')) result += "m";
 	return result;
 }
