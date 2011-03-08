@@ -1,62 +1,130 @@
 <html>
   <head>
-    <title>Test RegExp</title>
-    <style type="text/css">
-      div#examples span.ok {color: green;}
-      div#examples span.ok span.matched{background-color: LawnGreen;}      
-      div#examples span.submatches {color: black; font-style:italic;}      
-      div#examples span.not_ok {color: red;}      
-      div#counterexamples span.ok {color: red;}
-      div#counterexamples span.ok span.matched{background-color: Coral;}      
-      div#counterexamples span.not_ok {color: green;}      
-      p#regexp_focus_shortcut {font-style: italic; margin-top: 0px; margin-left: 10px;}
-      p#invalid_regexp {color: red; margin-bottom: 2px; margin-left: 10px;}
-    </style>
+    <title>Test your regular expressions online</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" media="screen, projection"> 
+    <link rel="stylesheet" type="text/css" href="application.css" media="screen, projection"> 
   </head>
   <body>
-    <h1>Test your Regular Expression online</h1>
-    <p id="invalid_regexp">Invalid regexp</p>
-    /
-    <input type="text" name="regexp" value="" id="regexp" size='50'>
-    /
-    <input type="checkbox" id="i_flag" class="flag">i
-    <!-- <input type="checkbox" id="g_flag" class="flag">g     -->
-    <!-- <input type="checkbox" id="m_flag" class="flag">m     -->
-    <p id="regexp_focus_shortcut">ctrl-e to focus here</p>
-    <div id="examples">
-      <h2>Examples:</h2>
-      <p>
-        <input type="text" value="" size='50' class="example">
-        <span class='result not_ok'>not matched</span>        
-        <span class='result ok match'></span>              
-        <span class='result ok submatches'></span>        
-      </p>                         
-      <p>                          
-        <input type="text" value="" size='50' class="example">
-        <span class='result not_ok'>not matched</span>        
-        <span class='result ok match'></span>
-        <span class='result ok submatches'></span>        
-      </p>
-      <a href="#" class="add_example">Add example</a>
-    </div>
-    <div id="counterexamples">
-      <h2>Counterexamples:</h2>
-      <p>
-        <input type="text" value="" size='50' class="counterexample">
-        <span class='result ok match'>matched</span>              
-        <span class='result not_ok'>not matched</span>
-      </p>                         
-      <p>                          
-        <input type="text" value="" size='50' class="counterexample">
-        <span class='result ok match'>matched</span>              
-        <span class='result not_ok'>not matched</span>
-      </p>
-      <a href="#" class="add_example">Add counterexample</a>      
-    </div>
+    <div id="wrap">
       
-    <p>See <a href="http://github.com/Florent2/test-regexp-online">project page</p>
+      <div id="header">
+        <h1>Test your regular expressions online</h1>
+      </div>
       
+      <div id="main">
+        <h2>Your regexp</h2>
+        <p id="invalid_regexp">Invalid regexp</p>
+        /
+        <input type="text" name="regexp" value="" id="regexp" size='50'>
+        /
+        <input type="checkbox" id="i_flag" class="flag">i
+        <!-- <input type="checkbox" id="g_flag" class="flag">g     -->
+        <!-- <input type="checkbox" id="m_flag" class="flag">m     -->
+        <p id="regexp_focus_shortcut">ctrl-e to focus here</p>
+        <div id="examples">
+          <h2>Examples:</h2>
+          <ol>
+            <li>
+              <input type="text" value="" size='50' class="example">
+              <span class='result not_ok'>not matched</span>        
+              <span class='result ok match'></span>              
+              <span class='result ok submatches'></span>        
+            </li>              
+            <li>                          
+              <input type="text" value="" size='50' class="example">
+              <span class='result not_ok'>not matched</span>        
+              <span class='result ok match'></span>
+              <span class='result ok submatches'></span>        
+            </li>
+          </ol>
+          <a href="#" id="add_example">Add example</a>
+        </div>
+        <div id="counterexamples">
+          <h2>Counterexamples:</h2>
+          <ol>
+            <li>
+              <input type="text" value="" size='50' class="counterexample">
+              <span class='result ok match'>matched</span>              
+              <span class='result not_ok'>not matched</span>
+            </li>                         
+            <li>                          
+              <input type="text" value="" size='50' class="counterexample">
+              <span class='result ok match'>matched</span>              
+              <span class='result not_ok'>not matched</span>
+            </li>
+          </ol>
+          <a href="#" id="add_counterexample">Add counterexample</a>      
+        </div>
+        
+        <ul id="footer">
+          <li>See <a href="http://github.com/Florent2/test-regexp-online" target="_blank">project on GitHub</a></li>        
+          <li>Created by <a href="http://www.florentguilleux.fr" target="_blank">Florent</a></li>
+        </ul>
+        
+      </div>  <!-- end of main -->
+
+      <div id="regexp-reference">
+        <h2>
+          Regexp references
+          <select id="regexp-reference">
+            <option value="all">All</option>
+            <option value="charater-classes">Character classes</option>
+            <option value="special-characters">Special characters</option>
+            <option value="quantifiers">Quantifiers</option>
+            <option value="ranges">Ranges</option>
+          </select>
+        </h2>
+        <table id="charater-classes">
+          <tr class="odd"><td>\c</td><td>Control character</td></tr>
+          <tr class="even"><td>\s</td><td>White space</td></tr>
+          <tr class="odd"><td>\S</td><td>Not white space</td></tr>
+          <tr class="even"><td>\d</td><td>Digit</td></tr>
+          <tr class="odd"><td>\D</td><td>Not digit</td></tr>
+          <tr class="even"><td>\w</td><td>Word</td></tr>
+          <tr class="odd"><td>\W</td><td>Not word</td></tr>
+          <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
+          <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
+        </table>
+        <table id="special-characters">
+          <tr class="odd"><td>^ [ . $ { * (
+          \ / + | ? < ></td><td>Must be escaped</td></tr>
+          <tr class="even"><td>\n</td><td>New line</td></tr>
+          <tr class="odd"><td>\r</td><td>Carriage return</td></tr>
+          <tr class="even"><td>\t</td><td>Tab</td></tr>
+          <tr class="odd"><td>\v</td><td>Vertical tab</td></tr>
+          <tr class="even"><td>\f</td><td>Form feed</td></tr>
+          <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
+          <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
+        </table>
+        <table id="quantifiers">
+          <tr class="odd"><td>*</td><td>0 or more</td></tr>
+          <tr class="even"><td>*?</td><td>0 or more, ungreedy</td></tr>
+          <tr class="odd"><td>*</td><td>1 or more</td></tr>
+          <tr class="even"><td>+?</td><td>1 or more, ungreedy</td></tr>
+          <tr class="odd"><td>?</td><td>0 or 1</td></tr>
+          <tr class="even"><td>??</td><td>0 or 1, ungreedy</td></tr>
+          <tr class="odd"><td>{3}</td><td>exactly 3</td></tr>
+          <tr class="even"><td>{3,}</td><td>3 or more</td></tr>
+          <tr class="odd"><td>{3,5}</td><td>3, 4 or 5</td></tr>
+          <tr class="even"><td>{3,5}</td><td>3, 4 or 5, ungreedy</td></tr>
+        </table>
+        <table id="ranges">
+          <tr class="odd"><td>.</td><td>Any character except new line (\n)</td></tr>
+          <tr class="even"><td>(a|b)</td><td>a or b</td></tr>
+          <tr class="odd"><td>(...)</td><td>Group</td></tr>
+          <tr class="even"><td>(?:...)</td><td>Passive Group</td></tr>
+          <tr class="odd"><td>[abc]</td><td>Range (a or b or c)</td></tr>
+          <tr class="even"><td>[^abc]</td><td>Not or b or c</td></tr>
+          <tr class="odd"><td>[a-q]</td><td>Letter between a and q</td></tr>
+          <tr class="even"><td>[A-Q]</td><td>Upper case letter between A and Q</td></tr>
+          <tr class="odd"><td>[0-7]</td><td>Digit between 0 and 7</td></tr>
+        </table>
+      </div>  <!-- end of regexp-reference -->
+            
+    </div>  <!-- end of wrap -->
+
     <script src="jquery-1.4.2.min.js" type="text/javascript"></script> 
     <script src="application.js" type="text/javascript"></script>     
+
   </body>
 </html>

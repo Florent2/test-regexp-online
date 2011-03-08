@@ -1,0 +1,89 @@
+body, html, select {
+  margin:0;
+  padding:0;
+  color:#666666;
+  background:#CCCCCC;
+}
+#wrap {
+	width:960px;
+	margin:0 auto;
+/*	background:#99c;*/
+}
+#header, #footer {
+/*	background:#ddd;*/
+}
+#main, div#regexp-reference {
+/*	background:#9c9;*/
+	padding: 10px;
+}
+#header {
+	padding: 10px;
+	text-align: center;
+	border-bottom: 1px solid;
+}
+#main {
+	float:left;
+	width:500px;
+}
+div#regexp-reference {
+	float:right;
+	width:420px;
+}
+a, a:visited {
+	color:#666666;
+}
+a:hover {
+	text-decoration:none;
+}
+#examples, #counterexamples {
+	margin: 20 0px;
+}
+
+h1 { font-size: 30px; }
+h2 { 
+	font-size: 20px; 
+	margin: 8 0px;
+	font-style:italic;
+}
+ol {
+	list-style-type: decimal;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+ul#footer {
+	width:290px;
+	border-top: 1px dotted;
+	margin-top: 40px;
+	padding-top: 10px;
+	text-align: center;
+}
+ul#footer li {
+	display: inline;
+	padding-right: 10px;
+}
+
+div#examples span.ok { color: green; }
+div#examples span.ok span.matched{ background-color: LawnGreen; }      
+div#examples span.submatches { color: black; font-style:italic; }      
+div#examples span.not_ok { color: red; }      
+div#counterexamples span.ok { color: red; }
+div#counterexamples span.ok span.matched{ background-color: Coral; }      
+div#counterexamples span.not_ok { color: green; }      
+p#regexp_focus_shortcut { font-style: italic; margin-top: 0px; margin-left: 10px; }
+p#invalid_regexp { color: red; margin-bottom: 2px; margin-left: 10px; }
+
+table {
+	margin-bottom: 20px;
+}
+td {
+	padding: 2 4px;
+}
+tr.odd {
+	background-color:#999999;
+}
+td:first-child {
+	width: 180px;
+}
+td:last-child {
+	width: 230px;
+}

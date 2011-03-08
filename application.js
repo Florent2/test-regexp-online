@@ -63,6 +63,16 @@ function updateAllResults() {
   });          
 }
 
+function updateReferenceSection() {
+	selectedReference = $('select#regexp-reference').attr('value');
+	if(selectedReference === 'all') {
+		$("table").show();	
+	} else {
+		$("table").hide();
+		$("table#" + selectedReference).show();
+	}
+}
+
 // from http://www.scottklarr.com/topic/126/how-to-create-ctrl-key-shortcuts-in-javascript/
 var isCtrl = false;
 $(document).keyup(function (e) {
@@ -75,20 +85,25 @@ $(document).keyup(function (e) {
 	}
 });
 
-$(document).ready(function() {
+$(function() {
   $('#regexp').focus();
   $('span.result').hide();
   $('p#invalid_regexp').hide();
+	
   $('input.example, input.counterexample').live("keyup", function() {
     updateResultFor($(this), $('#regexp').val(), getRegexFlags());
   });        
   $('input#regexp').keyup(updateAllResults);
 	$('input.flag').change(updateAllResults);
-  $('a.add_example').click(function() {
-    var newExample = $('div#examples p:last').clone();
+  
+	$('a#add_example, a#add_counterexample').click(function() {
+		var lastExample	= $(this).parent().children('ol').children('li:last');
+		var newExample	= lastExample.clone();
     newExample.children('input').attr('value', '');
     newExample.children('span').hide();
-    newExample.insertBefore($(this));
-    newExample.children("input").focus();
+		newExample.insertAfter(lastExample);
+    newExample.children("input").focus();		
   });
+
+	$('select#regexp-reference').change(updateReferenceSection);
 });
