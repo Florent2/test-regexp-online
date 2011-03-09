@@ -99,7 +99,7 @@ function updateAllResults() {
 function updatePermalink() {
 	var queryStringComponents = {};
 	if($('#regexp').val()) queryStringComponents.regexp = $('#regexp').val();
-	if($('#description').val()) queryStringComponents.description = $('#description').val();
+	if($('#description').val() && $('#description').val() !== 'Here you can enter an optional description or title for your regexp') queryStringComponents.description = $('#description').val();
 	if($('input#iFlag').is(':checked')) queryStringComponents.iFlag = $('input#iFlag').is(':checked');
 	$('input.example[value!=""]').each(function(index) { queryStringComponents["example" + (index + 1)] = $(this).val(); });
 	$('input.counterexample[value!=""]').each(function(index) { queryStringComponents["counterexample" + (index + 1)] = $(this).val(); });
