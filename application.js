@@ -148,6 +148,7 @@ function addExampleInput(section) {
 	
 $(function() {
 	$('input').placeholder();
+	$('h1 a').attr('href', document.location.pathname);
 	
 	$('a#add_example').click(function() { addExampleInput($('div#examples')) } );
 	$('a#add_counterexample').click(function() { addExampleInput($('div#counterexamples')) } );

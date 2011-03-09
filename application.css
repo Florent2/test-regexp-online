@@ -20,6 +20,9 @@ body, html, select {
 	margin-bottom: 10px;
 	border-bottom: 1px solid;
 }
+#header h1 a {
+	text-decoration: none;
+}
 input#description { 
 	width: 500px; 
 	text-align: center;
