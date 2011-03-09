@@ -18,7 +18,6 @@ Features
 TODO
 ----
 
-* dispay captured groups below input field
 * manual tests with IE
 
 * add tests (with http://pivotal.github.com/jasmine/, http://code.google.com/p/js-test-driver/wiki/GettingStarted ?)
