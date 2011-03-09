@@ -51,7 +51,9 @@ a:hover {
 #examples, #counterexamples {
 	margin: 20 0px;
 }
-
+input {
+	margin-bottom: 4px;
+}
 h1 { font-size: 30px; }
 h2 { 
 	font-size: 20px; 
