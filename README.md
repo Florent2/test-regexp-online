@@ -9,11 +9,9 @@ TODO:
 
 * check HTML validity...
 
-* add tests (with http://pivotal.github.com/jasmine/ ?)
+* add tests (with http://pivotal.github.com/jasmine/, http://code.google.com/p/js-test-driver/wiki/GettingStarted ?)
 
-* check other online regular expression testers to see if other features can be useful
+* add permalink examples for the references
 
 * more work needed to support the g flag to correctly highlight all matched strings
-* to support the m flag I would need the user to be able to enter characters like \n
-
-* fix spans showing: initially they are displayed below the input field
+* to support the m flag I would need the user to be able to enter characters like \n, ie use textarea?
