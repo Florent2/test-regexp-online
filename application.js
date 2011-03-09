@@ -47,9 +47,41 @@ function updateResultFor(input, regexpValue, regexpFlags) {
   resultSpans.filter(".not_ok").hide();
 }       
 
+function fillInInputsFromQueryString() {
+	// from http://stackoverflow.com/questions/901115/get-querystring-values-with-jquery/2880929#2880929
+	var params = {}	;
+	var e,
+	    a = /\+/g,  // Regex for replacing addition symbol with a space
+	    r = /([^&=]+)=?([^&]*)/g,
+	    d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+	    q = window.location.search.substring(1);
+	while (e = r.exec(q)) params[d(e[1])] = d(e[2]);
+	
+	$('input#regexp').attr('value', params.regexp);
+	$('input#description').attr('value', params.description);
+	if(params.iFlag) $('input#iFlag').attr('checked', 'true');
+	
+	fillInExampleInputsFromQueryStringParams("example", params);
+	fillInExampleInputsFromQueryStringParams("counterexample", params);
+}
+
+function fillInExampleInputsFromQueryStringParams(example, params) {
+	var i = 1;
+	while(value = params[example + i]) {
+		exampleInputSelector 	= 'input.' + example + ':eq(' + (i - 1) + ')';
+		var exampleInput			= $(exampleInputSelector);
+		if(!exampleInput.length) {
+			$('a#add_' + example).click();
+			exampleInput = $(exampleInputSelector);		
+		}
+		exampleInput.attr('value', value);
+		i++;
+	}	
+}
+
 function getRegexFlags() {
 	var result = "";
-	if($('input#i_flag').is(':checked')) result += "i";
+	if($('input#iFlag').is(':checked')) result += "i";
 	// if($('input#g_flag').is(':checked')) result += "g";
 	// if($('input#m_flag').is(':checked')) result += "m";
 	return result;
@@ -61,10 +93,30 @@ function updateAllResults() {
 	$('input:not(#regexp)').each(function(i) {
     updateResultFor($(this), regexpValue, regexpFlags);
   });          
+	updatePermalink();
+}
+
+function updatePermalink() {
+	var queryStringComponents = {};
+	if($('#regexp').val()) queryStringComponents.regexp = $('#regexp').val();
+	if($('#description').val()) queryStringComponents.description = $('#description').val();
+	if($('input#iFlag').is(':checked')) queryStringComponents.iFlag = $('input#iFlag').is(':checked');
+	$('input.example[value!=""]').each(function(index) { queryStringComponents["example" + (index + 1)] = $(this).val(); });
+	$('input.counterexample[value!=""]').each(function(index) { queryStringComponents["counterexample" + (index + 1)] = $(this).val(); });
+	queryString = $.param(queryStringComponents);
+	
+	if(queryString) {
+		var permalink		= window.location.protocol + '//' + window.location.host + window.location.pathname + '?' + $.param(queryStringComponents);
+		$('a#permalink').html(permalink);
+		$('a#permalink').attr('href', permalink);
+		$('div#permalink_section').show();				
+	} else {
+		$('div#permalink_section').hide();
+	}
 }
 
 function updateReferenceSection() {
-	selectedReference = $('select#regexp-reference').attr('value');
+	selectedReference = $('select#regexp-reference').val();
 	if(selectedReference === 'all') {
 		$("table").show();	
 	} else {
@@ -85,25 +137,35 @@ $(document).keyup(function (e) {
 	}
 });
 
+function addExampleInput(section) {
+	var lastExample	= section.children('ol').children('li:last');
+	var newExample	= lastExample.clone();
+  newExample.children('input').attr('value', '');
+  newExample.children('span').hide();
+	newExample.insertAfter(lastExample);
+  newExample.children("input").focus();		
+}
+	
 $(function() {
-  $('#regexp').focus();
+	$('input').placeholder();
+	
+	$('a#add_example').click(function() { addExampleInput($('div#examples')) } );
+	$('a#add_counterexample').click(function() { addExampleInput($('div#counterexamples')) } );
+
   $('span.result').hide();
   $('p#invalid_regexp').hide();
+	fillInInputsFromQueryString();
+	updateAllResults();	
+  $('#regexp').focus();
 	
   $('input.example, input.counterexample').live("keyup", function() {
     updateResultFor($(this), $('#regexp').val(), getRegexFlags());
+		updatePermalink();
   });        
+
   $('input#regexp').keyup(updateAllResults);
 	$('input.flag').change(updateAllResults);
   
-	$('a#add_example, a#add_counterexample').click(function() {
-		var lastExample	= $(this).parent().children('ol').children('li:last');
-		var newExample	= lastExample.clone();
-    newExample.children('input').attr('value', '');
-    newExample.children('span').hide();
-		newExample.insertAfter(lastExample);
-    newExample.children("input").focus();		
-  });
-
+	$('input#description').keyup(updatePermalink);
 	$('select#regexp-reference').change(updateReferenceSection);
 });

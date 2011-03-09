@@ -7,25 +7,38 @@ body, html, select {
 #wrap {
 	width:960px;
 	margin:0 auto;
-/*	background:#99c;*/
 }
-#header, #footer {
-/*	background:#ddd;*/
-}
-#main, div#regexp-reference {
-/*	background:#9c9;*/
+#main, div#right-side {
 	padding: 10px;
 }
 #header {
 	padding: 10px;
 	text-align: center;
+}
+#header h1 {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 	border-bottom: 1px solid;
+}
+input#description { 
+	width: 500px; 
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+div#permalink_section {
+	word-wrap:break-word;
+	font-size: 14px;
+	font-style:italic;	
+}
+div#permalink_section a {
+	font-style:normal;
 }
 #main {
 	float:left;
 	width:500px;
 }
-div#regexp-reference {
+div#right-side {
 	float:right;
 	width:420px;
 }
