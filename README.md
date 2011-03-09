@@ -17,9 +17,6 @@ TODO:
 
 * add tests (with http://pivotal.github.com/jasmine/ ?)
 
-* add possibility to get a permalink of a given regexp and examples & counterexamples
-  * add title
-  * add examples
 * check other online regular expression testers to see if other features can be useful
   * http://www.ninjavspenguin.com/regexp.html#groups_and_ranges
 
