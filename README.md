@@ -1,4 +1,4 @@
-Test your Regular Expression online
+Test your Javascript regular expressions online
 ===================================
 
 A toy project I made to learn a bit more about JavaScript and jQuery.
@@ -11,7 +11,9 @@ Features
 * highlight matched results
 * display captured groups
 * allow to fill in counter examples also
-* provides a permalink for a given set of regexp
+* provides a permalink for a given set of regexp, examples and counter examples, thus you can easily share this illustrated regexp
+* warn when regexp is invalid
+* for now do not support the `g` and `m` flags
 
 TODO
 ----
