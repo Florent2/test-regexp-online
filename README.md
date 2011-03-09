@@ -1,7 +1,7 @@
 Test your Javascript regular expressions online
 ===================================
 
-A toy project I made to learn a bit more about JavaScript and jQuery.
+A small project I made to learn a bit more about JavaScript and jQuery.
 
 [Demo page](http://florent2.github.com/test-regexp-online/)
 
