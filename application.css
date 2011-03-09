@@ -30,6 +30,10 @@ input#description {
 	margin-bottom: 10px;
 }
 div#permalink_section {
+	white-space: pre-wrap; /* css-3 */    
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */    
+	white-space: -o-pre-wrap; /* Opera 7 */
 	word-wrap:break-word;
 	font-size: 14px;
 	font-style:italic;	
@@ -53,6 +57,9 @@ a:hover {
 }
 #examples, #counterexamples {
 	margin: 20 0px;
+}
+li {
+	word-wrap:break-word;	
 }
 input {
 	margin-bottom: 4px;
