@@ -85,8 +85,13 @@ div#counterexamples span.not_ok { color: green; }
 p#regexp_focus_shortcut { font-style: italic; margin-top: 0px; margin-left: 10px; }
 p#invalid_regexp { color: red; margin-bottom: 2px; margin-left: 10px; }
 
+h3 {
+	text-align: center;
+	margin-bottom: 5px;
+	text-decoration: underline;
+}
 table {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 td {
 	padding: 2 4px;

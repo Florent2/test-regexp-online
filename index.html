@@ -76,53 +76,103 @@
             <option value="special-characters">Special characters</option>
             <option value="quantifiers">Quantifiers</option>
             <option value="ranges">Ranges</option>
+            <option value="assertions">Assertions</option>
+            <option value="flags">Flags</option>
+            <option value="anchors">Anchors</option>
+            <option value="string-replacement">String replacement</option>
           </select>
         </h2>
-        <table id="charater-classes">
-          <tr class="odd"><td>\c</td><td>Control character</td></tr>
-          <tr class="even"><td>\s</td><td>White space</td></tr>
-          <tr class="odd"><td>\S</td><td>Not white space</td></tr>
-          <tr class="even"><td>\d</td><td>Digit</td></tr>
-          <tr class="odd"><td>\D</td><td>Not digit</td></tr>
-          <tr class="even"><td>\w</td><td>Word</td></tr>
-          <tr class="odd"><td>\W</td><td>Not word</td></tr>
-          <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
-          <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
-        </table>
-        <table id="special-characters">
-          <tr class="odd"><td>^ [ . $ { * (
-          \ / + | ? < ></td><td>Must be escaped</td></tr>
-          <tr class="even"><td>\n</td><td>New line</td></tr>
-          <tr class="odd"><td>\r</td><td>Carriage return</td></tr>
-          <tr class="even"><td>\t</td><td>Tab</td></tr>
-          <tr class="odd"><td>\v</td><td>Vertical tab</td></tr>
-          <tr class="even"><td>\f</td><td>Form feed</td></tr>
-          <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
-          <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
-        </table>
-        <table id="quantifiers">
-          <tr class="odd"><td>*</td><td>0 or more</td></tr>
-          <tr class="even"><td>*?</td><td>0 or more, ungreedy</td></tr>
-          <tr class="odd"><td>*</td><td>1 or more</td></tr>
-          <tr class="even"><td>+?</td><td>1 or more, ungreedy</td></tr>
-          <tr class="odd"><td>?</td><td>0 or 1</td></tr>
-          <tr class="even"><td>??</td><td>0 or 1, ungreedy</td></tr>
-          <tr class="odd"><td>{3}</td><td>exactly 3</td></tr>
-          <tr class="even"><td>{3,}</td><td>3 or more</td></tr>
-          <tr class="odd"><td>{3,5}</td><td>3, 4 or 5</td></tr>
-          <tr class="even"><td>{3,5}</td><td>3, 4 or 5, ungreedy</td></tr>
-        </table>
-        <table id="ranges">
-          <tr class="odd"><td>.</td><td>Any character except new line (\n)</td></tr>
-          <tr class="even"><td>(a|b)</td><td>a or b</td></tr>
-          <tr class="odd"><td>(...)</td><td>Group</td></tr>
-          <tr class="even"><td>(?:...)</td><td>Passive Group</td></tr>
-          <tr class="odd"><td>[abc]</td><td>Range (a or b or c)</td></tr>
-          <tr class="even"><td>[^abc]</td><td>Not or b or c</td></tr>
-          <tr class="odd"><td>[a-q]</td><td>Letter between a and q</td></tr>
-          <tr class="even"><td>[A-Q]</td><td>Upper case letter between A and Q</td></tr>
-          <tr class="odd"><td>[0-7]</td><td>Digit between 0 and 7</td></tr>
-        </table>
+        <div id="charater-classes">
+          <h3>Character classes</h3>
+          <table>
+            <tr class="odd"><td>\cX</td><td>Control character X</td></tr>
+            <tr class="even"><td>\s</td><td>White space (space, tab, form feed, line feed)</td></tr>
+            <tr class="odd"><td>\S</td><td>Not white space</td></tr>
+            <tr class="even"><td>\d</td><td>Digit</td></tr>
+            <tr class="odd"><td>\D</td><td>Not digit</td></tr>
+            <tr class="even"><td>\w</td><td>Word</td></tr>
+            <tr class="odd"><td>\W</td><td>Not word</td></tr>
+            <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
+            <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
+          </table>
+        </div>
+        <div id="special-characters">
+          <h3>Special characters</h3>
+          <table>
+            <tr class="odd"><td>^ [ . $ { * (
+            \ / + | ? < ></td><td>Must be escaped</td></tr>
+            <tr class="even"><td>\n</td><td>New line</td></tr>
+            <tr class="odd"><td>\r</td><td>Carriage return</td></tr>
+            <tr class="even"><td>\t</td><td>Tab</td></tr>
+            <tr class="odd"><td>\v</td><td>Vertical tab</td></tr>
+            <tr class="even"><td>\f</td><td>Form feed</td></tr>
+            <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
+            <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
+            <tr class="odd"><td>\uhhhh</td><td>Unicode character hh</td></tr>
+            <tr class="even"><td>\0</td><td>NUL character</td></tr>
+          </table>
+        </div>
+        <div id="quantifiers">
+          <h3>Quantifiers</h3>
+          <table>
+            <tr class="odd"><td>*</td><td>0 or more</td></tr>
+            <tr class="even"><td>*?</td><td>0 or more, ungreedy</td></tr>
+            <tr class="odd"><td>*</td><td>1 or more</td></tr>
+            <tr class="even"><td>+?</td><td>1 or more, ungreedy</td></tr>
+            <tr class="odd"><td>?</td><td>0 or 1</td></tr>
+            <tr class="even"><td>??</td><td>0 or 1, ungreedy</td></tr>
+            <tr class="odd"><td>{3}</td><td>exactly 3</td></tr>
+            <tr class="even"><td>{3,}</td><td>3 or more</td></tr>
+            <tr class="odd"><td>{3,5}</td><td>3, 4 or 5</td></tr>
+            <tr class="even"><td>{3,5}</td><td>3, 4 or 5, ungreedy</td></tr>
+          </table>
+        </div>
+        <div id="ranges">
+          <h3>Ranges</h3>
+          <table>
+            <tr class="odd"><td>.</td><td>Any character except new line (\n)</td></tr>
+            <tr class="even"><td>(a|b)</td><td>a or b</td></tr>
+            <tr class="odd"><td>(...)</td><td>Group</td></tr>
+            <tr class="even"><td>(?:...)</td><td>Passive Group</td></tr>
+            <tr class="odd"><td>[abc]</td><td>Range (a or b or c)</td></tr>
+            <tr class="even"><td>[^abc]</td><td>Not or b or c</td></tr>
+            <tr class="odd"><td>[a-q]</td><td>Letter between a and q</td></tr>
+            <tr class="even"><td>[A-Q]</td><td>Upper case letter between A and Q</td></tr>
+            <tr class="odd"><td>[0-7]</td><td>Digit between 0 and 7</td></tr>
+            <tr class="even"><td>\n</td><td>nth group/subpattern</td></tr>
+          </table>
+        </div>
+        <div id="assertions">
+          <h3>Assertions</h3>
+          <table>
+            <tr class="odd"><td>?=</td><td>Lookahead assertion</td></tr>
+            <tr class="even"><td>?!</td><td>Negative lookahead</td></tr>
+          </table>
+        </div>
+        <div id="flags">
+          <h3>Flags</h3>
+          <table>
+            <tr class="odd"><td>g</td><td>Global match</td></tr>
+            <tr class="even"><td>i</td><td>Ignore case</td></tr>
+            <tr class="odd"><td>m</td><td>Treat beginning and end characters (^ and $) as working over multiple lines</td></tr>
+          </table>
+        </div>
+        <div id="anchors">
+          <h3>Anchors</h3>
+          <table>
+            <tr class="odd"><td>^</td><td>Start of line</td></tr>
+            <tr class="odd"><td>$</td><td>End of line</td></tr>
+            <tr class="odd"><td>\b</td><td>Word boundary</td></tr>
+            <tr class="even"><td>\B</td><td>Not word boundary</td></tr>
+          </table>
+        </div>
+        <div id="string-replacement">
+          <h3>String replacement</h3>
+          <table>
+            <tr class="odd"><td>$n</td><td>nth non-passive group</td></tr>
+            <tr class="even"><td>$2</td><td>"xyz" in /^(abc)(xyz))$/</td></tr>
+            <tr class="odd"><td>$1</td><td>"xyz" in /^(?:abc)(xyz)$/</td></tr>
+          </table>
       </div>  <!-- end of regexp-reference -->
             
     </div>  <!-- end of wrap -->

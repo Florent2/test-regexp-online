@@ -118,10 +118,10 @@ function updatePermalink() {
 function updateReferenceSection() {
 	selectedReference = $('select#regexp-reference').val();
 	if(selectedReference === 'all') {
-		$("table").show();	
+		$("div#right-side div").show();	
 	} else {
-		$("table").hide();
-		$("table#" + selectedReference).show();
+		$("div#right-side div").hide();	
+		$("div#" + selectedReference).show();
 	}
 }
 
