@@ -1,0 +1,122 @@
+body, html, select {
+  margin:0;
+  padding:0;
+  color:#666666;
+  background:#CCCCCC;
+}
+#wrap {
+	width:960px;
+	margin:0 auto;
+}
+#main, div#right-side {
+	padding: 10px;
+}
+#header {
+	padding: 10px;
+	text-align: center;
+}
+#header h1 {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid;
+}
+#header h1 a {
+	text-decoration: none;
+}
+input#description { 
+	width: 500px; 
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+div#permalink_section {
+	white-space: pre-wrap; /* css-3 */    
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */    
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap:break-word;
+	font-size: 14px;
+	font-style:italic;	
+}
+div#permalink_section a {
+	font-style:normal;
+}
+#main {
+	float:left;
+	width:500px;
+}
+div#right-side {
+	float:right;
+	width:420px;
+}
+a, a:visited {
+	color:#666666;
+}
+a:hover {
+	text-decoration:none;
+}
+#examples, #counterexamples {
+	margin: 20 0px;
+}
+li {
+	word-wrap:break-word;	
+}
+input {
+	margin-bottom: 4px;
+}
+h1 { font-size: 30px; }
+h2 { 
+	font-size: 20px; 
+	margin: 8px 0px;
+	font-style:italic;
+}
+ol {
+	list-style-type: decimal;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+ul#footer {
+	width:290px;
+	border-top: 1px dotted;
+	margin-top: 40px;
+	padding-top: 10px;
+	text-align: center;
+}
+ul#footer li {
+	display: inline;
+	padding-right: 10px;
+}
+
+div#examples span.ok { color: green; }
+div#examples span.ok span.matched{ background-color: LawnGreen; }      
+div#examples span.submatches { color: black; font-style:italic; }      
+div#examples span.not_ok { color: red; }      
+div#counterexamples span.ok { color: red; }
+div#counterexamples span.ok span.matched{ background-color: Coral; }      
+div#counterexamples span.not_ok { color: green; }      
+p#regexp_focus_shortcut { font-style: italic; margin-top: 0px; margin-left: 10px; }
+p#invalid_regexp { color: red; margin-bottom: 2px; margin-left: 10px; }
+
+h3 {
+	text-align: center;
+	margin-bottom: 5px;
+	text-decoration: underline;
+}
+table {
+	margin-bottom: 10px;
+}
+td {
+	padding: 2px 4px;
+}
+tr.odd {
+	background-color:#999999;
+}
+td:first-child {
+	width: 180px;
+}
+td:last-child {
+	width: 230px;
+}
+div#extra {
+	text-align: center;
+}

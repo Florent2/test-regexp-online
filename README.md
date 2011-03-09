@@ -1,21 +1,28 @@
-Test your Regular Expression online
+Test your Javascript regular expressions online
 ===================================
 
-A toy project I made to learn a bit more about JavaScript and jQuery.
+A small project I made to learn a bit more about JavaScript and jQuery.
 
 [Demo page](http://florent2.github.com/test-regexp-online/)
 
-TODO:
+Features
+--------
+* test the regexp as you type
+* highlight matched results
+* display captured groups
+* allow to fill in counter examples also
+* provides a permalink for a given set of regexp, examples and counter examples, thus you can easily share this illustrated regexp
+* warn when regexp is invalid
+* for now do not support the `g` and `m` flags
 
-* check whether better selection rules can be used
-* make sure matched string hightligthing
-* improve design
-* allow example or counter example deletion
-* fix spans showing: initially they are displayed below the input field
-* check other online regular expression testers to see if other features can be useful
-* add JavaScript regular expression reference
-* add tests (with http://pivotal.github.com/jasmine/ ?)
-* check if it's working with special characters
-* display alert when regular expression is not valid
-* check HTML validity...
-* use HTML5 tags
+TODO
+----
+
+* manual tests with IE
+
+* add tests (with http://pivotal.github.com/jasmine/, http://code.google.com/p/js-test-driver/wiki/GettingStarted ?)
+
+* add permalink examples in the references
+
+* more work needed to support the `g` flag to correctly highlight all matched strings
+* to support the `m` flag I would need the user to be able to enter characters like \n, ie use textarea?
