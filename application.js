@@ -71,7 +71,7 @@ function fillInExampleInputsFromQueryStringParams(example, params) {
 		exampleInputSelector 	= 'input.' + example + ':eq(' + (i - 1) + ')';
 		var exampleInput			= $(exampleInputSelector);
 		if(!exampleInput.length) {
-			$('a#add_' + example).click();
+			addExampleInput($('div#' + example + 's'));
 			exampleInput = $(exampleInputSelector);		
 		}
 		exampleInput.attr('value', value);
