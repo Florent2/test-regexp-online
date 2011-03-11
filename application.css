@@ -24,8 +24,9 @@ body, html, select {
 #header h1 a {
 	text-decoration: none;
 }
-input#description { 
-	width: 500px; 
+textarea#description { 
+	width: 700px; 
+	height: 20px;
 	text-align: center;
 	font-size: 15px;
 }

@@ -11,7 +11,7 @@ $(document).keyup(function (e) {
 });
 
 $(function() {
-	$('input').placeholder();
+	$('textarea').placeholder();
 	$('h1 a').attr('href', document.location.pathname);
 	
 	$('a#add_example').click(function() { addExampleInput($('div#examples')) } );
@@ -22,6 +22,7 @@ $(function() {
 	fillInInputsFromQueryString();
 	updateAllResults();	
   $('#regexp').focus();
+	$('textarea#description').autogrow();
 	
   $('input.example, input.counterexample').live("keyup", function() {
     updateResultFor($(this), $('#regexp').val(), getRegexFlags());
@@ -31,7 +32,7 @@ $(function() {
   $('input#regexp').keyup(updateAllResults);
 	$('input.flag').change(updateAllResults);
   
-	$('input#description').keyup(updatePermalink);
+	$('textarea#description').keyup(updatePermalink);
 	$('select#regexp-reference').change(updateReferenceSection);
 });
 
@@ -61,7 +62,7 @@ function fillInInputsFromQueryString() {
 	while (e = r.exec(q)) params[d(e[1])] = d(e[2]);
 	
 	$('input#regexp').attr('value', params.regexp);
-	$('input#description').attr('value', params.description);
+	$('textarea#description').attr('value', params.description);
 	if(params.iFlag) $('input#iFlag').attr('checked', 'true');
 	
 	fillInExampleInputsFromQueryStringParams("example", params);
