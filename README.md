@@ -18,6 +18,9 @@ Features
 TODO
 ----
 
+* increase size of the regexp value font and change font
+* allow to enter multilines examples & counterexamples 
+
 * simplify the references by making a single list without sections (like https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions)
 * add permalink examples in the references
 
