@@ -173,7 +173,7 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 	var beforeMatchedString = inputValue.slice(0, matchedIndex);
 	var afterMatchedString 	= inputValue.slice(matchedIndex + matchedString.length);
   var inputValueWithMatchedStringHighlighted	= 
-		'matched: ' + 
+		'matched<br />' + 
 		beforeMatchedString + 
 		'<span class="matched">' + matchedString + '</span>' + 
 		afterMatchedString;  

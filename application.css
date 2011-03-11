@@ -60,6 +60,7 @@ a:hover {
 	margin: 20 0px;
 }
 li {
+	margin-bottom: 10px;
 	word-wrap:break-word;	
 }
 input {
