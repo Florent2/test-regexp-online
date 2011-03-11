@@ -13,7 +13,7 @@ Features
 * allow to fill in counter examples also
 * provides a permalink for a given set of regexp, examples and counter examples, thus you can easily share this illustrated regexp
 * warn when regexp is invalid
-* for now do not support the `g` and `m` flags
+* for now does NOT support the `g` and `m` flags
 
 TODO
 ----
