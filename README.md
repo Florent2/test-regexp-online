@@ -18,6 +18,8 @@ Features
 TODO
 ----
 
+* add the possibility to use a URL shortener for the permalink?
+
 * manual tests with IE
 
 * add tests (with http://pivotal.github.com/jasmine/, http://code.google.com/p/js-test-driver/wiki/GettingStarted ?)
