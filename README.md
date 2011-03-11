@@ -18,13 +18,14 @@ Features
 TODO
 ----
 
+* simplify the references by making a single list without sections (like https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions)
+* add permalink examples in the references
+
 * add the possibility to use a URL shortener for the permalink?
 
 * manual tests with IE
 
 * add tests (with http://pivotal.github.com/jasmine/, http://code.google.com/p/js-test-driver/wiki/GettingStarted ?)
-
-* add permalink examples in the references
 
 * more work needed to support the `g` flag to correctly highlight all matched strings
 * to support the `m` flag I would need the user to be able to enter characters like \n, ie use textarea?
