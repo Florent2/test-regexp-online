@@ -7,9 +7,10 @@ body, html, select {
 #wrap {
 	width:960px;
 	margin:0 auto;
+	margin-bottom: 20px;
 }
 #main, div#right-side {
-	padding: 10px;
+	padding: 0px 10px;
 }
 #header {
 	padding: 10px;
@@ -27,7 +28,6 @@ input#description {
 	width: 500px; 
 	text-align: center;
 	font-size: 15px;
-	margin-bottom: 10px;
 }
 div#permalink_section {
 	white-space: pre-wrap; /* css-3 */    
@@ -67,7 +67,8 @@ input {
 h1 { font-size: 30px; }
 h2 { 
 	font-size: 20px; 
-	margin: 8px 0px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 	font-style:italic;
 }
 ol {
