@@ -29,3 +29,8 @@ TODO
 
 * more work needed to support the `g` flag to correctly highlight all matched strings
 * to support the `m` flag I would need the user to be able to enter characters like \n, ie use textarea?
+
+CONTRIBUTIONS
+-------------
+
+If you want to contribute (that would be awesome), fork the project and then send me a pull request.
