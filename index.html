@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">    
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <title>Test your JavaScript regular expressions online</title>
     <link rel="stylesheet" type="text/css" href="reset.css" media="screen, projection"> 
     <link rel="stylesheet" type="text/css" href="application.css" media="screen, projection"> 
@@ -19,12 +19,12 @@
   </head>
   <body>
     <div id="wrap">
-      
+
       <div id="header">
         <h1><a href="">Test your JavaScript regular expressions online</a></h1>
         <textarea id="description" placeholder="Here you can enter an optional description or title for your regexp"></textarea>
       </div>
-      
+
       <div id="main">
         <h2>Your regexp:</h2>
         <p id="invalid_regexp">Invalid regexp</p>
@@ -40,16 +40,16 @@
           <ol>
             <li>
               <input type="text" value="" size='50' class="example">
-              <span class='result not_ok'>not matched</span>        
-              <span class='result ok match'></span>          
-              <br />    
-              <span class='result ok submatches'></span>        
-            </li>              
-            <li>                          
-              <input type="text" value="" size='50' class="example">
-              <span class='result not_ok'>not matched</span>        
+              <span class='result not_ok'>not matched</span>
               <span class='result ok match'></span>
-              <span class='result ok submatches'></span>        
+              <br />
+              <span class='result ok submatches'></span>
+            </li>
+            <li>
+              <input type="text" value="" size='50' class="example">
+              <span class='result not_ok'>not matched</span>
+              <span class='result ok match'></span>
+              <span class='result ok submatches'></span>
             </li>
           </ol>
           <a href="#" id="add_example">Add example</a>
@@ -59,26 +59,26 @@
           <ol>
             <li>
               <input type="text" value="" size='50' class="counterexample">
-              <span class='result ok match'>matched</span>              
+              <span class='result ok match'>matched</span>
               <span class='result not_ok'>not matched</span>
-            </li>                         
-            <li>                          
+            </li>
+            <li>
               <input type="text" value="" size='50' class="counterexample">
-              <span class='result ok match'>matched</span>              
+              <span class='result ok match'>matched</span>
               <span class='result not_ok'>not matched</span>
             </li>
           </ol>
-          <a href="#" id="add_counterexample">Add counterexample</a>      
+          <a href="#" id="add_counterexample">Add counterexample</a>
         </div>
         <div id="permalink_section">
           <h2>Permalink:</h2>
           <a href="" id="permalink"></a>
-        </div>        
+        </div>
         <ul id="footer">
-          <li>See <a href="http://github.com/Florent2/test-regexp-online" target="_blank">project on GitHub</a></li>        
+          <li>See <a href="http://github.com/Florent2/test-regexp-online" target="_blank">project on GitHub</a></li>
           <li>Created by <a href="http://www.florentguilleux.fr" target="_blank">Florent</a></li>
         </ul>
-        
+
       </div>  <!-- end of main -->
 
       <div id="right-side">
@@ -99,93 +99,93 @@
         <div id="charater-classes">
           <h3>Character classes</h3>
           <table>
-            <tr class="odd"><td>\cX</td><td>Control character X</td></tr>
-            <tr class="even"><td>\s</td><td>White space</td></tr>
-            <tr class="odd"><td>\S</td><td>Not white space</td></tr>
-            <tr class="even"><td>\d</td><td>Digit</td></tr>
-            <tr class="odd"><td>\D</td><td>Not digit</td></tr>
-            <tr class="even"><td>\w</td><td>Word</td></tr>
-            <tr class="odd"><td>\W</td><td>Not word</td></tr>
-            <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
-            <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
+            <tr><td>\cX</td><td>Control character X</td></tr>
+            <tr><td>\s</td><td>White space</td></tr>
+            <tr><td>\S</td><td>Not white space</td></tr>
+            <tr><td>\d</td><td>Digit</td></tr>
+            <tr><td>\D</td><td>Not digit</td></tr>
+            <tr><td>\w</td><td>Word</td></tr>
+            <tr><td>\W</td><td>Not word</td></tr>
+            <tr><td>\xhh</td><td>Hexadecimal character hh</td></tr>
+            <tr><td>\xxx</td><td>Octal character xxx</td></tr>
           </table>
         </div>
         <div id="special-characters">
           <h3>Special characters</h3>
           <table>
-            <tr class="odd"><td>^ [ . $ { * (
+            <tr><td>^ [ . $ { * (
             \ / + | ? &lt; ></td><td>Must be escaped</td></tr>
-            <tr class="even"><td>\n</td><td>New line</td></tr>
-            <tr class="odd"><td>\r</td><td>Carriage return</td></tr>
-            <tr class="even"><td>\t</td><td>Tab</td></tr>
-            <tr class="odd"><td>\v</td><td>Vertical tab</td></tr>
-            <tr class="even"><td>\f</td><td>Form feed</td></tr>
-            <tr class="odd"><td>\xxx</td><td>Octal character xxx</td></tr>
-            <tr class="even"><td>\xhh</td><td>Hexadecimal character hh</td></tr>
-            <tr class="odd"><td>\uhhhh</td><td>Unicode character hh</td></tr>
-            <tr class="even"><td>\0</td><td>NUL character</td></tr>
+            <tr><td>\n</td><td>New line</td></tr>
+            <tr><td>\r</td><td>Carriage return</td></tr>
+            <tr><td>\t</td><td>Tab</td></tr>
+            <tr><td>\v</td><td>Vertical tab</td></tr>
+            <tr><td>\f</td><td>Form feed</td></tr>
+            <tr><td>\xxx</td><td>Octal character xxx</td></tr>
+            <tr><td>\xhh</td><td>Hexadecimal character hh</td></tr>
+            <tr><td>\uhhhh</td><td>Unicode character hh</td></tr>
+            <tr><td>\0</td><td>NUL character</td></tr>
           </table>
         </div>
         <div id="quantifiers">
           <h3>Quantifiers</h3>
           <table>
-            <tr class="odd"><td>*</td><td>0 or more</td></tr>
-            <tr class="even"><td>*?</td><td>0 or more, ungreedy</td></tr>
-            <tr class="odd"><td>*</td><td>1 or more</td></tr>
-            <tr class="even"><td>+?</td><td>1 or more, ungreedy</td></tr>
-            <tr class="odd"><td>?</td><td>0 or 1</td></tr>
-            <tr class="even"><td>??</td><td>0 or 1, ungreedy</td></tr>
-            <tr class="odd"><td>{3}</td><td>exactly 3</td></tr>
-            <tr class="even"><td>{3,}</td><td>3 or more</td></tr>
-            <tr class="odd"><td>{3,5}</td><td>3, 4 or 5</td></tr>
-            <tr class="even"><td>{3,5}</td><td>3, 4 or 5, ungreedy</td></tr>
+            <tr><td>*</td><td>0 or more</td></tr>
+            <tr><td>*?</td><td>0 or more, ungreedy</td></tr>
+            <tr><td>*</td><td>1 or more</td></tr>
+            <tr><td>+?</td><td>1 or more, ungreedy</td></tr>
+            <tr><td>?</td><td>0 or 1</td></tr>
+            <tr><td>??</td><td>0 or 1, ungreedy</td></tr>
+            <tr><td>{3}</td><td>exactly 3</td></tr>
+            <tr><td>{3,}</td><td>3 or more</td></tr>
+            <tr><td>{3,5}</td><td>3, 4 or 5</td></tr>
+            <tr><td>{3,5}</td><td>3, 4 or 5, ungreedy</td></tr>
           </table>
         </div>
         <div id="ranges">
           <h3>Ranges</h3>
           <table>
-            <tr class="odd"><td>.</td><td>Any character except new line (\n)</td></tr>
-            <tr class="even"><td>(a|b)</td><td>a or b</td></tr>
-            <tr class="odd"><td>(...)</td><td>Group</td></tr>
-            <tr class="even"><td>(?:...)</td><td>Passive Group</td></tr>
-            <tr class="odd"><td>[abc]</td><td>Range (a or b or c)</td></tr>
-            <tr class="even"><td>[^abc]</td><td>Not or b or c</td></tr>
-            <tr class="odd"><td>[a-q]</td><td>Letter between a and q</td></tr>
-            <tr class="even"><td>[A-Q]</td><td>Upper case letter between A and Q</td></tr>
-            <tr class="odd"><td>[0-7]</td><td>Digit between 0 and 7</td></tr>
-            <tr class="even"><td>\n</td><td>nth group/subpattern</td></tr>
+            <tr><td>.</td><td>Any character except new line (\n)</td></tr>
+            <tr><td>(a|b)</td><td>a or b</td></tr>
+            <tr><td>(...)</td><td>Group</td></tr>
+            <tr><td>(?:...)</td><td>Passive Group</td></tr>
+            <tr><td>[abc]</td><td>Range (a or b or c)</td></tr>
+            <tr><td>[^abc]</td><td>Not or b or c</td></tr>
+            <tr><td>[a-q]</td><td>Letter between a and q</td></tr>
+            <tr><td>[A-Q]</td><td>Upper case letter between A and Q</td></tr>
+            <tr><td>[0-7]</td><td>Digit between 0 and 7</td></tr>
+            <tr><td>\n</td><td>nth group/subpattern</td></tr>
           </table>
         </div>
         <div id="assertions">
           <h3>Assertions</h3>
           <table>
-            <tr class="odd"><td>?=</td><td>Lookahead assertion</td></tr>
-            <tr class="even"><td>?!</td><td>Negative lookahead</td></tr>
+            <tr><td>?=</td><td>Lookahead assertion</td></tr>
+            <tr><td>?!</td><td>Negative lookahead</td></tr>
           </table>
         </div>
         <div id="flags">
           <h3>Flags</h3>
           <table>
-            <tr class="odd"><td>g</td><td>Global match</td></tr>
-            <tr class="even"><td>i</td><td>Ignore case</td></tr>
-            <tr class="odd"><td>m</td><td>Treat beginning and end characters (^ and $) as working over multiple lines</td></tr>
+            <tr><td>g</td><td>Global match</td></tr>
+            <tr><td>i</td><td>Ignore case</td></tr>
+            <tr><td>m</td><td>Treat beginning and end characters (^ and $) as working over multiple lines</td></tr>
           </table>
         </div>
         <div id="anchors">
           <h3>Anchors</h3>
           <table>
-            <tr class="odd"><td>^</td><td>Start of line</td></tr>
-            <tr class="odd"><td>$</td><td>End of line</td></tr>
-            <tr class="odd"><td>\b</td><td>Word boundary</td></tr>
-            <tr class="even"><td>\B</td><td>Not word boundary</td></tr>
+            <tr><td>^</td><td>Start of line</td></tr>
+            <tr><td>$</td><td>End of line</td></tr>
+            <tr><td>\b</td><td>Word boundary</td></tr>
+            <tr><td>\B</td><td>Not word boundary</td></tr>
           </table>
         </div>
         <div id="string-replacement">
           <h3>String replacement</h3>
           <table>
-            <tr class="odd"><td>$n</td><td>nth non-passive group</td></tr>
-            <tr class="even"><td>$2</td><td>"xyz" in /^(abc)(xyz))$/</td></tr>
-            <tr class="odd"><td>$1</td><td>"xyz" in /^(?:abc)(xyz)$/</td></tr>
+            <tr><td>$n</td><td>nth non-passive group</td></tr>
+            <tr><td>$2</td><td>"xyz" in /^(abc)(xyz))$/</td></tr>
+            <tr><td>$1</td><td>"xyz" in /^(?:abc)(xyz)$/</td></tr>
           </table>
         </div>
         <div id="extra">
@@ -196,9 +196,9 @@
             <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions">MDN RegExp documentation</a></li>
           </ul>
         </div>
-        
+
       </div>  <!-- end of regexp-reference -->
-            
+
     </div>  <!-- end of wrap -->
 
     <script src="jquery-1.4.2.min.js" type="text/javascript"></script> 
