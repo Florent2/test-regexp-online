@@ -11,6 +11,9 @@ $(document).keyup(function (e) {
 });
 
 $(function() {
+  $('tr:even').addClass('even');
+  $('tr:odd').addClass('odd');
+
 	$('textarea').placeholder();
 	$('h1 a').attr('href', document.location.pathname);
 	
