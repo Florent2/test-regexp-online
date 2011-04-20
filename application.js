@@ -5,7 +5,7 @@ $(document).keyup(function (e) {
 }).keydown(function (e) {
 	if(e.which === 17) isCtrl=true;
 	if(e.which === 69 && isCtrl) {
-    $('#regexp').focus();          
+    $('#regexp').focus();
 		return false;
 	}
 });
@@ -27,11 +27,11 @@ $(function() {
   $('input.example, input.counterexample').live("keyup", function() {
     updateResultFor($(this), $('#regexp').val(), getRegexFlags());
 		updatePermalink();
-  });        
+  });
 
   $('input#regexp').keyup(updateAllResults);
 	$('input.flag').change(updateAllResults);
-  
+
 	$('textarea#description').keyup(updatePermalink);
 	$('select#regexp-reference').change(updateReferenceSection);
 });
@@ -103,7 +103,7 @@ function updateAllResults() {
 	regexpFlags = getRegexFlags();
 	$('input:not(#regexp)').each(function(i) {
     updateResultFor($(this), regexpValue, regexpFlags);
-  });          
+  });
 	updatePermalink();
 }
 
@@ -146,13 +146,13 @@ function updateReferenceSection() {
 // regexpFlags: the regexp flags, example: "ig" or "m" or ""
 function updateResultFor(input, regexpValue, regexpFlags) {
   var inputValue 	= input.val();
-  var resultSpans	= input.parent().children('span');       
+  var resultSpans	= input.parent().children('span');
 
   if(!inputValue || !regexpValue) {
     resultSpans.hide();
 		return;
   }
-  
+
 	try {
 		var regexp = new RegExp(regexpValue, regexpFlags);
 	}
@@ -166,25 +166,25 @@ function updateResultFor(input, regexpValue, regexpFlags) {
 	  resultSpans.filter(".not_ok").show('fast');
     resultSpans.filter(".ok").hide();
 		return;
-	} 
-  
+	}
+
 	var matchedString 			= result.shift();
   var	matchedIndex				= result.index;
 	var beforeMatchedString = inputValue.slice(0, matchedIndex);
 	var afterMatchedString 	= inputValue.slice(matchedIndex + matchedString.length);
-  var inputValueWithMatchedStringHighlighted	= 
-		'matched<br />' + 
-		beforeMatchedString + 
-		'<span class="matched">' + matchedString + '</span>' + 
-		afterMatchedString;  
+  var inputValueWithMatchedStringHighlighted	=
+		'matched<br />' +
+		beforeMatchedString +
+		'<span class="matched">' + matchedString + '</span>' +
+		afterMatchedString;
   resultSpans.filter(".match").html(inputValueWithMatchedStringHighlighted);
-  
+
   var submatchesListString = jQuery.map(result, function(submatch, index) {
     return '$' + (index + 1) + ' = ' + submatch;
   }).join('; ');
   resultSpans.filter(".submatches").text(submatchesListString);
-  
-	resultSpans.filter(".ok").show('fast');            
+
+	resultSpans.filter(".ok").show('fast');
   resultSpans.filter(".not_ok").hide();
-}       
+}
 

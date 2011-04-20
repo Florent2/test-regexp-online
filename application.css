@@ -31,9 +31,9 @@ textarea#description {
 	font-size: 15px;
 }
 div#permalink_section {
-	white-space: pre-wrap; /* css-3 */    
+	white-space: pre-wrap; /* css-3 */
 	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-	white-space: -pre-wrap; /* Opera 4-6 */    
+	white-space: -pre-wrap; /* Opera 4-6 */
 	white-space: -o-pre-wrap; /* Opera 7 */
 	word-wrap:break-word;
 	font-size: 14px;
@@ -91,12 +91,12 @@ ul#footer li {
 }
 
 div#examples span.ok { color: green; }
-div#examples span.ok span.matched{ background-color: LawnGreen; }      
-div#examples span.submatches { color: black; font-style:italic; }      
-div#examples span.not_ok { color: red; }      
+div#examples span.ok span.matched{ background-color: LawnGreen; }
+div#examples span.submatches { color: black; font-style:italic; }
+div#examples span.not_ok { color: red; }
 div#counterexamples span.ok { color: red; }
-div#counterexamples span.ok span.matched{ background-color: Coral; }      
-div#counterexamples span.not_ok { color: green; }      
+div#counterexamples span.ok span.matched{ background-color: Coral; }
+div#counterexamples span.not_ok { color: green; }
 p#regexp_focus_shortcut { font-style: italic; margin-top: 0px; margin-left: 10px; }
 p#invalid_regexp { color: red; margin-bottom: 2px; margin-left: 10px; }
 
