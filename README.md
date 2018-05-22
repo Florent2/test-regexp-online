@@ -29,7 +29,7 @@ TODO
 
 * manual tests with IE
 
-* add tests (with http://pivotal.github.com/jasmine/, http://code.google.com/p/js-test-driver/wiki/GettingStarted ?)
+* add tests (with https://jasmine.github.io/, http://code.google.com/p/js-test-driver/wiki/GettingStarted ?)
 
 * more work needed to support the `g` flag to correctly highlight all matched strings
 * to support the `m` flag I would need the user to be able to enter characters like \n, ie use textarea?
